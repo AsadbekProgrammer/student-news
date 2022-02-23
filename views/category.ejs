@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('layouts/header')-%>
+
+<body>
+
+    <div id="wrapper">
+        <header class="tech-header header">
+            <div class="container-fluid">
+                <%-include('layouts/navbar');-%>
+            </div><!-- end container-fluid -->
+        </header><!-- end market-header -->
+
+        <div class="page-title lb single-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h2><i class="fa fa-star bg-orange"></i>
+                             <% if (cat_name == 1) { %> Talabalar <% } %> 
+                             <% if (cat_name == 2) {%> Universitet <% } %>
+                             <% if (cat_name == 3) {%> Fan va Ta'lim <% } %>
+                        </h2>
+                    </div><!-- end col -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Bosh sahifa</a></li>
+                            <li class="breadcrumb-item">
+                                <a href="/category/<%= cat_name %>">
+                                    <% if (cat_name == 1) { %> Talabalar <% } %> 
+                                    <% if (cat_name == 2) {%> Universitet <% } %>
+                                    <% if (cat_name == 3) {%> Fan va Ta'lim <% } %>
+                                </a>
+                            </li>
+                        </ol>
+                    </div><!-- end col -->                    
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end page-title -->
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-list clearfix">
+                                <%-include('layouts/posts.ejs');-%>
+                            </div><!-- end blog-list -->
+                        </div><!-- end page-wrapper -->
+
+                        <hr class="invis">
+
+                        <!-- <div class="row">
+                            <div class="col-md-12">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-start">
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div> -->
+                    </div><!-- end col -->
+
+                    <%-include('layouts/right_sidebar')-%>
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <%-include('layouts/footer');-%>
+
+        <div class="dmtop">Scroll to Top</div>
+        
+    </div><!-- end wrapper -->
+
+   <%-include('layouts/scripts');-%>
+
+</body>
+</html>

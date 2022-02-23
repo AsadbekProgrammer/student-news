@@ -1,0 +1,48 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/"><img src="/images/version/logo.png" width="250" height="50" alt=""></a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/category/1">Talabalar</a>
+            </li>                   
+            <li class="nav-item">
+                <a class="nav-link" href="/category/2">Universitet</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/category/3">Fan va Ta'lim</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contacts">Biz bilan bog'lanish</a>
+            </li>
+            <% if(loggedIn == adminIn) {%>
+            <li class="nav-item">
+                <a class="nav-link" href="/addpost">Yangilik qo'shish</a>
+            </li>
+            <% } %>
+        </ul>
+        
+        <ul class="navbar-nav mr-2">
+            <% if(!loggedIn) {%>
+            <li class="nav-item">
+                <a class="nav-link" href="/auth/login"><i class="fa fa-user-circle"></i> Kirish</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/auth/register"><i class="fa fa-vcard-o"></i> Ro'yxatdan o'tish</a>
+            </li>
+            <% } else {%>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-user-circle"></i> <%=userN %> <%=userL%></a>                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/logout"><i class="fa fa-power-off"></i> Chiqish</a>
+                </li>
+            <% } %>
+            
+        </ul>
+     
+
+    </div>
+</nav>

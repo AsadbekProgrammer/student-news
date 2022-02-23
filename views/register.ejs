@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('layouts/header');-%>
+<body>
+
+    <div id="wrapper">
+        <header class="tech-header header">
+            <div class="container-fluid">
+                <%-include('layouts/navbar');-%>
+            </div><!-- end container-fluid -->
+        </header><!-- end market-header -->
+
+        <div class="page-title lb single-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h2><i class="fa fa-envelope-open-o bg-orange"></i> Ro'yxatdan o'tish</h2>
+                    </div><!-- end col -->                   
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end page-title -->
+
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-wrapper">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <% if(errors != null && errors.length > 0){%>
+                                        <ul class="list-group">
+                                            <% for(var i = 0; i < errors.length; i++){%>
+                                                <li class="list-group-item list-group-item-danger"><%=errors[i]%></li>
+                                            <% } %>
+                                        </ul>
+                                    <% } %>
+                                    <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-wrapper">
+                                        <input type="text" id="name" name="name" class="form-control" value="<%=name%>" placeholder="Ism">
+                                        <input type="text" id="lastname" name="lastname" class="form-control" value="<%=lastname%>" placeholder="Familiya">
+                                        <input type="text" id="username" name="username" class="form-control" value="<%=username%>" placeholder="Foydalanuvchi nomi">
+                                        <input type="password" id="password" name="password" class="form-control" value="<%password%>" placeholder="Parol">
+                                        <input type="email" id="email" name="email" class="form-control" value="<%email%>" placeholder="Email manzil">
+                                        <button type="submit" class="btn btn-primary">Ro'yxatdan o'tish <i class="fa fa-user-plus"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div><!-- end page-wrapper -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+        <%-include('layouts/footer');-%>
+
+        <div class="dmtop">Scroll to Top</div>
+        
+    </div><!-- end wrapper -->
+
+    <%-include('layouts/scripts');-%>
+
+    </body>
+</html>

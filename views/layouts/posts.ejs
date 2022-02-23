@@ -1,0 +1,30 @@
+<% for(var i = 0; i < blogposts.length; i++) { %>
+<div class="blog-box row">
+    <div class="col-md-4">
+        <div class="post-media">
+            <a href="/post/<%= blogposts[i]._id %>" title="">
+                <img src="<%= blogposts[i].image %>" alt="" class="img-fluid">
+                <div class="hovereffect"></div>
+            </a>
+        </div><!-- end media -->
+    </div><!-- end col -->
+
+    <div class="blog-meta big-meta col-md-8">
+        <h4><a href="/post/<%= blogposts[i]._id %>" title=""><%= blogposts[i].title %></a></h4>
+        <p><%- blogposts[i].intro %></p>
+        <small class="firstsmall">
+            <a class="bg-orange" href="/category/<%= blogposts[i].category%>" title=""> 
+                <% if ( blogposts[i].category == 1) { %> Talabalar <% } %> 
+                <% if ( blogposts[i].category == 2) {%> Universitet <% } %>
+                <% if ( blogposts[i].category == 3) {%> Fan va Ta'lim <% } %>
+            </a>
+        </small>
+        <small><a href="/post/<%= blogposts[i]._id %>" title=""><%= blogposts[i].datePosted.toDateString() %></a></small>
+        <small><a href="/post/<%= blogposts[i]._id %>" title="">by <%= blogposts[i].userid.username %></a></small>
+        <small><a href="/post/<%= blogposts[i]._id %>" title=""><i class="fa fa-eye"></i> <%= blogposts[i].counter %></a></small>
+        <% if(loggedIn == adminIn) {%><small><a style="color:red!important" href="/delete/<%= blogposts[i]._id %>" title=""><i class="fa fa-close"></i> Postni o'chirish</a></small><% } %>
+    </div><!-- end meta -->
+</div><!-- end blog-box -->
+
+<hr class="invis">
+<% } %>

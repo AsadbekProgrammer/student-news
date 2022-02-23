@@ -1,0 +1,31 @@
+{
+  "name": "studentnews",
+  "version": "1.0.0",
+  "description": "News Website for students",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "news",
+    "website"
+  ],
+  "author": "Shaxriyor Xudoyberdiyev",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "connect-flash": "^0.1.1",
+    "crypto-js": "^4.1.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-fileupload": "^1.3.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.2.2",
+    "mongoose-unique-validator": "^3.0.0",
+    "process": "^0.11.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
